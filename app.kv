@@ -1,0 +1,25 @@
+#:kivy 2.0.0
+
+BoxLayout:
+    orientation: 'vertical'
+
+    Label:
+        text: 'Face Recognition App'
+        font_size: 30
+
+    Image:
+        id: img_display
+        source: 'path_to_default_image.png'
+
+    FileChooserIconView:
+        id: file_chooser
+        on_selection: app.select_image(file_chooser.selection)
+
+    Button:
+        text: 'Select Image'
+        on_release: file_chooser.path = '/path/to/images/folder'
+
+    Label:
+        id: result_label
+        text: 'Result: '
+        font_size: 20
